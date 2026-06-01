@@ -49,7 +49,7 @@ export default function ServicesPage() {
   }, [activeId]);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || booking.isOpen) return;
 
     const interval = setInterval(
       handleNext,
@@ -57,7 +57,7 @@ export default function ServicesPage() {
     );
 
     return () => clearInterval(interval);
-  }, [handleNext, isPaused]);
+  }, [handleNext, isPaused, booking.isOpen]);
 
   const handleUserInteraction = useCallback(() => {
     if (pauseTimerRef.current)
@@ -89,8 +89,6 @@ export default function ServicesPage() {
 }) => {
   if (pauseTimerRef.current)
     clearTimeout(pauseTimerRef.current);
-
-  setIsPaused(true);
 
   booking.openBooking(service);
 };
