@@ -17,10 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.9,
     },
-    {
-      url: "https://motormedic.co.nz/contact",
-      lastModified: new Date(),
-      priority: 0.8,
-    },
+    
   ];
 }
