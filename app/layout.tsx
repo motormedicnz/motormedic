@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: [{ url: "https://motormedic.co.nz/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "MotorMedic", description: "Advanced automotive engineering", images: ["https://yourdomain.com/og-image.jpg"] },
+  twitter: { card: "summary_large_image", title: "MotorMedic", description: "Advanced automotive engineering", images: ["https://motormedic.co.nz/og-image.jpg"] },
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
 };
 
