@@ -226,7 +226,7 @@ export const SERVICES: Service[] = [
   id: "other-service",
   icon: Wrench,
   title: "Other Service",
-  image: "/service/menu/other.png",
+  image: "/service/menu/img12.png",
   shortDescription:
     "Can't find your service? Tell us what you need.",
   description:
