@@ -89,28 +89,28 @@ export const Hero = () => {
 
   <div className="animate-cta opacity-0">
     <Button
-      variant="hero"
-      size="xl"
-      asChild
-    >
-      <a href="/services#service-menu">
-        Book a Service
-        <ArrowRight className="ml-1" />
-      </a>
-    </Button>
+  variant="hero"
+  className="h-11 px-4 text-sm sm:h-14 sm:px-8 sm:text-base"
+  asChild
+>
+  <a href="/services#service-menu">
+    Book a Service
+    <ArrowRight className="ml-1 h-4 w-4 sm:h-5 sm:w-5" />
+  </a>
+</Button>
   </div>
 
   <div className="animate-cta opacity-0">
     <Button
-      variant="outlineGlow"
-      size="xl"
-      asChild
-    >
-      <a href="tel:0279165555">
-        <PhoneCall className="mr-1" />
-        Call Workshop
-      </a>
-    </Button>
+  variant="outlineGlow"
+  className="h-11 px-4 text-sm sm:h-14 sm:px-8 sm:text-base"
+  asChild
+>
+  <a href="tel:0279165555">
+    <PhoneCall className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
+    Call Workshop
+  </a>
+</Button>
   </div>
 
 </div>
