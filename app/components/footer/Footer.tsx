@@ -6,7 +6,7 @@ import Brand from "./Brand";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const HOURS = [
-  { day: "Mon – Sat", time: "9:30 AM – 4:30 PM" },
+  { day: "Mon – Sat", time: "8:30 AM – 5:00 PM" },
   { day: "Sunday", time: "Open by booking only" },
 ];
 
@@ -64,33 +64,31 @@ export const Footer = ({ showBrands = true }: FooterProps) => (
       ">
 
         {/* Col 1 — Brand identity */}
-        <div className="flex flex-col">
-          <a href="#home" className="footer-brand">
-            <img src="/navbar/LOGO PNG.png" alt="MotorMedic Logo"  className="footer-brand-logo"     />
-            <img src="/navbar/FONT PNG.png" alt="MotorMedic"       className="footer-brand-wordmark" />
-          </a>
-          <p className="footer-brand-desc">
-            Auckland's premium independent car workshop. Precision care, honest service.
-          </p>
-          <div className="footer-social-row">
-            <a
-  href="https://www.instagram.com/motormedic.autoz?igsh=MWFsZDkzYXN4YWx3Mg%3D%3D&utm_source=qr"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Instagram"
-  className="social-btn"
->
-            </a>
-            <a
-  href="https://www.facebook.com/profile.php?id=61590655644061"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Facebook"
-  className="social-btn"
->
-            </a>
-          </div>
-        </div>
+       <div className="footer-social-row">
+  <a
+    href="https://www.instagram.com/motormedic.autoz?igsh=MWFsZDkzYXN4YWx3Mg%3D%3D&utm_source=qr"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="social-btn"
+  >
+    <FaInstagram
+      style={{ width: "0.95rem", height: "0.95rem" }}
+    />
+  </a>
+
+  <a
+    href="https://www.facebook.com/profile.php?id=61590655644061"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="social-btn"
+  >
+    <FaFacebook
+      style={{ width: "0.95rem", height: "0.95rem" }}
+    />
+  </a>
+</div>
 
         {/* Col 2 — Visit Us */}
         <div className="flex flex-col">
