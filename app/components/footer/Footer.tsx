@@ -6,9 +6,8 @@ import Brand from "./Brand";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const HOURS = [
-  { day: "Mon – Fri", time: "8:00 – 17:30" },
-  { day: "Saturday",  time: "9:00 – 14:00" },
-  { day: "Sunday",    time: "Closed"        },
+  { day: "Mon – Sat", time: "9:30 AM – 4:30 PM" },
+  { day: "Sunday", time: "Open by booking only" },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -74,11 +73,21 @@ export const Footer = ({ showBrands = true }: FooterProps) => (
             Auckland's premium independent car workshop. Precision care, honest service.
           </p>
           <div className="footer-social-row">
-            <a href="#" aria-label="Instagram" className="social-btn">
-              <FaInstagram style={{ width: "0.95rem", height: "0.95rem" }} />
+            <a
+  href="https://www.instagram.com/motormedic.autoz?igsh=MWFsZDkzYXN4YWx3Mg%3D%3D&utm_source=qr"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+  className="social-btn"
+>
             </a>
-            <a href="#" aria-label="Facebook" className="social-btn">
-              <FaFacebook style={{ width: "0.95rem", height: "0.95rem" }} />
+            <a
+  href="https://www.facebook.com/profile.php?id=61590655644061"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+  className="social-btn"
+>
             </a>
           </div>
         </div>
@@ -146,7 +155,7 @@ export const Footer = ({ showBrands = true }: FooterProps) => (
     <div className="footer-bottom">
       <div className="footer-bottom-inner">
         <p>© {new Date().getFullYear()} MotorMedic Auckland. All rights reserved.</p>
-        <p>Built with precision in Tāmaki Makaurau.</p>
+        <p>Trusted automotive care in Auckland.</p>
       </div>
     </div>
 
