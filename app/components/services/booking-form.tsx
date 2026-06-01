@@ -116,6 +116,8 @@ export const BookingForm = ({
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 {
                     service_name: service.title,
+                    other_service_details:
+                    service.id === "other-service" ? formData.notes : "",
                     customer_name: formData.name,
                     customer_phone: formData.phone,
                     customer_email: formData.email,
@@ -317,16 +319,28 @@ export const BookingForm = ({
             </div>
 
             {/* NOTES */}
-            <div>
-                <textarea
-                    name="notes"
-                    placeholder="Describe the issue or additional notes..."
-                    rows={4}
-                    value={formData.notes}
-                    onChange={handleChange}
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-white outline-none transition focus:border-red-500"
-                />
-            </div>
+            {/* SERVICE DETAILS */}
+<div>
+  <p className="mb-3 text-xs uppercase tracking-[0.3em] text-white/40">
+    {service.id === "other-service"
+      ? "Service Description"
+      : "Additional Notes"}
+  </p>
+
+  <textarea
+    name="notes"
+    placeholder={
+      service.id === "other-service"
+        ? "Describe the service you require..."
+        : "Describe the issue or any additional information..."
+    }
+    rows={4}
+    required={service.id === "other-service"}
+    value={formData.notes}
+    onChange={handleChange}
+    className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-white outline-none transition focus:border-red-500 resize-none"
+  />
+</div>
 
             {/* BUTTON */}
             <button

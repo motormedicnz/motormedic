@@ -222,4 +222,22 @@ export const SERVICES: Service[] = [
       "Available for private, fleet, and commercial vehicles",
     ],
   },
+  {
+  id: "other-service",
+  icon: Wrench,
+  title: "Other Service",
+  image: "/service/menu/other.png",
+  shortDescription:
+    "Can't find your service? Tell us what you need.",
+  description:
+    "If your required service isn't listed, submit a booking request and describe it in detail.",
+  features: [
+    "Custom repair requests",
+    "Performance modifications",
+    "Specialist work",
+    "Fleet enquiries",
+    "Insurance repairs",
+    "Anything else automotive"
+  ],
+}
 ];
