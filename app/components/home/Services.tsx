@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Wrench,
   Cpu,
@@ -8,6 +10,11 @@ import {
   PaintBucket,
   LifeBuoy,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -53,17 +60,60 @@ const services = [
 ];
 
 export const Services = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: false,
+          once: true,
+        },
+        defaults: { ease: "power4.out", duration: 0.8 },
+      });
+
+      tl.fromTo(
+        ".service-label",
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0 }
+      )
+        .fromTo(
+          ".service-heading",
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, stagger: 0.1 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".service-description",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".service-card",
+          { opacity: 0, y: 30, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, stagger: 0.08 },
+          "-=0.5"
+        );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="services" className="relative py-28 bg-gradient-dark">
+    <section id="services" className="relative py-28 bg-gradient-dark" ref={containerRef}>
       <div className="container mx-auto flex flex-col items-center">
         <div className="max-w-3xl mb-20 text-center">
-          <div className="text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-4">
+          <div className="service-label text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-4">
             What we do
           </div>
-          <h2 className="font-display text-5xl md:text-7xl leading-none mb-6">
+          <h2 className="service-heading font-display text-5xl md:text-7xl leading-none mb-6">
             OFFERED <span className="text-gradient-primary">SERVICES</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="service-description text-muted-foreground text-lg">
             Every job is backed by certified technicians, genuine parts and a 12-month workmanship guarantee.
           </p>
         </div>
@@ -89,7 +139,7 @@ export const Services = () => {
   {services.map((s, i) => (
     <div
       key={s.title}
-      className="
+      className="service-card
       
         group relative
         w-full 

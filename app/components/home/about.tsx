@@ -1,23 +1,95 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function AboutSnippet() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: false,
+          once: true,
+        },
+        defaults: { ease: "power4.out", duration: 0.8 },
+      });
+
+      tl.fromTo(".about-hairline-top", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1 })
+        .fromTo(
+          ".about-label",
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0 },
+          0.2
+        )
+        .fromTo(
+          ".about-heading",
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".about-tagline",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".about-stats",
+          { opacity: 0, x: -30 },
+          { opacity: 1, x: 0, stagger: 0.1 },
+          "-=0.5"
+        )
+        .fromTo(
+          ".about-content",
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".about-credentials",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.05 },
+          "-=0.5"
+        )
+        .fromTo(
+          ".about-cta",
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0 },
+          "-=0.4"
+        )
+        .fromTo(".about-hairline-bottom", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1 }, "-=0.3");
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-<section className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-24 py-14 md:py-20">
+<section className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-24 py-14 md:py-20" ref={containerRef}>
 
   {/* Top hairline */}
-  <div className="mb-12 md:mb-16 h-[1px] bg-gradient-to-r from-white/25 via-white/10 to-transparent" />
+  <div className="about-hairline-top mb-12 md:mb-16 h-[1px] bg-gradient-to-r from-white/25 via-white/10 to-transparent" />
 
   {/* 3-col grid on desktop, stacked on mobile */}
   <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-16 lg:gap-24">
 
     {/* ── COL 1: Label + Big headline + tagline ── */}
     <div>
-      <p className="mb-5 text-[15px] tracking-[0.5em] font-medium text-primary">
+      <p className="about-label mb-5 text-[15px] tracking-[0.5em] font-medium text-primary">
         ABOUT US
       </p>
-      <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.92] tracking-tight">
+      <h2 className="about-heading font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.92] tracking-tight">
         25 YEARS.<br />
         <span className="text-[hsl(0_0%_72%)]">ONE<br />STANDARD.</span>
       </h2>
-      <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+      <p className="about-tagline mt-6 text-sm leading-relaxed text-muted-foreground">
         From the workshop pits of India to the streets of Auckland —
         built on decades of doing, diagnosing, and never cutting corners.
       </p>
@@ -30,7 +102,7 @@ export default function AboutSnippet() {
         { value: "12K+", label: "Vehicles serviced",  color: "hsl(var(--primary))" },
         { value: "50+",  label: "Marques mastered",   color: "hsl(var(--primary))" },
       ].map((s) => (
-        <div key={s.label}>
+        <div key={s.label} className="about-stats">
           <div className="font-display text-4xl lg:text-5xl leading-none" style={{ color: s.color }}>
             {s.value}
           </div>
@@ -42,7 +114,7 @@ export default function AboutSnippet() {
     </div>
 
     {/* ── COL 3: Para + credentials + CTA ── */}
-    <div className="flex flex-col justify-between gap-8">
+    <div className="about-content flex flex-col justify-between gap-8">
       <p className="text-sm lg:text-base leading-relaxed text-muted-foreground">
         Motor Medic Automotive was founded on one belief — that honest,
         precise workmanship never goes out of fashion. Every vehicle is
@@ -60,7 +132,7 @@ export default function AboutSnippet() {
         ].map((c) => (
           <span
             key={c.label}
-            className="text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 border border-white/10 text-muted-foreground"
+            className="about-credentials text-[9px] tracking-[0.2em] uppercase px-3 py-1.5 border border-white/10 text-muted-foreground"
             style={c.red ? { borderColor: "hsl(0 84% 50% / 0.40)", color: "hsl(var(--primary))" } : {}}
           >
             {c.label}
@@ -71,7 +143,7 @@ export default function AboutSnippet() {
       {/* CTA */}
       <a
         href="/about"
-        className="group inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-white/60 transition-colors duration-300 hover:text-white w-fit"
+        className="about-cta group inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-white/60 transition-colors duration-300 hover:text-white w-fit"
       >
         READ OUR STORY
         <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 inline-block">
@@ -83,7 +155,7 @@ export default function AboutSnippet() {
   </div>
 
   {/* Bottom hairline */}
-  <div className="mt-12 md:mt-16 h-[1px] bg-gradient-to-r from-white/25 via-white/10 to-transparent" />
+  <div className="about-hairline-bottom mt-12 md:mt-16 h-[1px] bg-gradient-to-r from-white/25 via-white/10 to-transparent" />
 
 </section>
  
