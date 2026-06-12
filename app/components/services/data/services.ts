@@ -28,7 +28,7 @@ export const SERVICES: Service[] = [
     id: "mechanical-repairs",
     icon: Wrench,
     title: "Complete Mechanical Repairs",
-    image: "/service/menu/img1.png",
+    image: "/service/menu/img20.jpeg",
     shortDescription:
       "Full-spectrum mechanical repair work carried out to manufacturer standards.",
     description:
