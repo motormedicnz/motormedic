@@ -17,7 +17,7 @@ export type Service = {
   id: string;
   icon: LucideIcon;
   title: string;
-  image: string;
+  images: string[];          // ← was: image: string
   shortDescription: string;
   description: string;
   features: string[];
@@ -28,7 +28,9 @@ export const SERVICES: Service[] = [
     id: "mechanical-repairs",
     icon: Wrench,
     title: "Complete Mechanical Repairs",
-    image: "/service/menu/img20.jpeg",
+    images: [
+      "/service/menu/img20.jpeg"
+    ],
     shortDescription:
       "Full-spectrum mechanical repair work carried out to manufacturer standards.",
     description:
@@ -46,7 +48,19 @@ export const SERVICES: Service[] = [
     id: "engine-repair",
     icon: Cog,
     title: "Engine Repair & Replace",
-    image: "/service/menu/img2.png",
+    images: [
+      "/service/engine/img1.jpeg",
+   "/service/engine/img6.jpeg",
+      "/service/engine/img12.jpeg",
+      "/service/engine/img8.jpeg",
+      "/service/engine/img13.jpeg",
+      "/service/engine/img10.jpeg",
+      "/service/engine/img11.jpeg",
+      "/service/engine/img7.jpeg",
+      "/service/engine/img9.jpeg",
+      "/service/engine/img14.jpeg",
+      "/service/engine/img15.jpeg"
+    ],
     shortDescription:
       "Expert engine rebuilds and full replacements for all makes and models.",
     description:
@@ -64,7 +78,22 @@ export const SERVICES: Service[] = [
     id: "transmission-repair",
     icon: Settings2,
     title: "Transmission Repair & Replace",
-    image: "/service/menu/img3.png",
+    images: [
+      "/service/transmission/img1.jpeg",
+      "/service/transmission/img2.jpeg",
+      "/service/transmission/img3.jpeg",
+      "/service/transmission/img4.jpeg",
+      "/service/transmission/img5.jpeg",
+      "/service/transmission/img6.jpeg",
+      "/service/transmission/img7.jpeg",
+      "/service/transmission/img8.jpeg",
+      "/service/transmission/img9.jpeg",
+      "/service/transmission/img10.jpeg",
+      "/service/transmission/img11.jpeg",
+      "/service/transmission/img12.jpeg",
+      "/service/transmission/img13.jpeg"
+
+    ],
     shortDescription:
       "Manual and automatic transmission repair, rebuild, and replacement.",
     description:
@@ -82,7 +111,9 @@ export const SERVICES: Service[] = [
     id: "oil-change",
     icon: Droplets,
     title: "Oil Change & Services",
-    image: "/service/menu/img4.png",
+    images: [
+      "service/menu/img4.png"
+    ],
     shortDescription:
       "Correct-grade oil, quality filters, and a full fluid check every visit.",
     description:
@@ -100,7 +131,20 @@ export const SERVICES: Service[] = [
     id: "brake-service",
     icon: CircleDot,
     title: "Brake Service",
-    image: "/service/menu/img5.png",
+    images: [
+      "/service/brakes/img1.jpeg",
+      "/service/brakes/img2.jpeg",
+      "/service/brakes/img3.jpeg",
+      "/service/brakes/img4.jpeg",
+      "/service/brakes/img5.jpeg",
+      "/service/brakes/img6.jpeg",
+      "/service/brakes/img7.jpeg",
+      "/service/brakes/img8.jpeg",
+      "/service/brakes/img9.jpeg",
+      "/service/brakes/img10.jpeg",
+      "/service/brakes/img11.jpeg",
+      "/service/brakes/img12.jpeg"
+    ],
     shortDescription:
       "Brake inspection, pad and rotor replacement, and full system checks.",
     description:
@@ -118,7 +162,15 @@ export const SERVICES: Service[] = [
     id: "suspension-work",
     icon: Layers,
     title: "Suspension Work",
-    image: "/service/menu/img6.png",
+    images: [
+      "/service/suspension/img1.jpeg",
+      "/service/suspension/img2.jpeg",
+      "/service/suspension/img3.jpeg",
+      "/service/suspension/img4.jpeg",
+    "/service/suspension/img5.jpeg",
+    "/service/suspension/img6.jpeg",
+    "/service/suspension/img7.jpeg",
+    ],
     shortDescription:
       "Shock absorbers, ball joints, bushings, and full suspension rebuilds.",
     description:
@@ -136,7 +188,9 @@ export const SERVICES: Service[] = [
     id: "hybrid-repairs",
     icon: Zap,
     title: "Hybrid System Repairs",
-    image: "/service/menu/img7.png",
+    images: [
+      "/service/menu/img7.png"
+    ],
     shortDescription:
       "High-voltage hybrid system diagnostics, servicing, and component repair.",
     description:
@@ -154,7 +208,9 @@ export const SERVICES: Service[] = [
     id: "diagnostics",
     icon: ScanLine,
     title: "Computer Diagnostics",
-    image: "/service/menu/img8.png",
+    images: [
+      "/service/menu/img8.png"
+    ],
     shortDescription:
       "Professional-grade OBD scanning and live data analysis across all systems.",
     description:
@@ -172,7 +228,9 @@ export const SERVICES: Service[] = [
     id: "panel-beating",
     icon: PaintBucket,
     title: "Panel Beating & Painting",
-    image: "/service/menu/img9.png",
+    images: [
+      "/service/menu/img11.png"
+    ],
     shortDescription:
       "Structural panel repairs and factory-matched resprays for all damage types.",
     description:
@@ -190,7 +248,9 @@ export const SERVICES: Service[] = [
     id: "detailing",
     icon: Sparkles,
     title: "Detailing",
-    image: "/service/menu/img10.png",
+    images: [
+      "/service/menu/img7.png"
+    ],
     shortDescription:
       "Paint correction, interior restoration, and protective coating application.",
     description:
@@ -208,7 +268,9 @@ export const SERVICES: Service[] = [
     id: "roadside-assistance",
     icon: TriangleAlert,
     title: "Roadside Assistance",
-    image: "/service/menu/img11.png",
+    images: [
+      "/service/menu/img11.png"
+    ],
     shortDescription:
       "On-call mechanical assistance for breakdowns, flat tyres, and jump starts.",
     description:
@@ -223,21 +285,22 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-  id: "other-service",
-  icon: Wrench,
-  title: "Other Service",
-  image: "/service/menu/img12.png",
-  shortDescription:
-    "Can't find your service? Tell us what you need.",
-  description:
-    "If your required service isn't listed, submit a booking request and describe it in detail.",
-  features: [
-    "Custom repair requests",
-    "Performance modifications",
-    "Specialist work",
-    "Fleet enquiries",
-    "Insurance repairs",
-    "Anything else automotive"
-  ],
-}
+    id: "other-service",
+    icon: Wrench,
+    title: "Other Service",
+    images: [
+      "/service/menu/img12.png"
+    ],
+    shortDescription: "Can't find your service? Tell us what you need.",
+    description:
+      "If your required service isn't listed, submit a booking request and describe it in detail.",
+    features: [
+      "Custom repair requests",
+      "Performance modifications",
+      "Specialist work",
+      "Fleet enquiries",
+      "Insurance repairs",
+      "Anything else automotive",
+    ],
+  },
 ];
