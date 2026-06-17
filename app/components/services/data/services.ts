@@ -136,13 +136,13 @@ export const SERVICES: Service[] = [
       "/service/brakes/img2.jpeg",
       "/service/brakes/img3.jpeg",
       "/service/brakes/img4.jpeg",
-      "/service/brakes/img5.jpeg",
+      "/service/brakes/img11.jpeg",
       "/service/brakes/img6.jpeg",
       "/service/brakes/img7.jpeg",
       "/service/brakes/img8.jpeg",
       "/service/brakes/img9.jpeg",
       "/service/brakes/img10.jpeg",
-      "/service/brakes/img11.jpeg",
+      "/service/brakes/img5.jpeg",
       "/service/brakes/img12.jpeg"
     ],
     shortDescription:
