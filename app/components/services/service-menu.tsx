@@ -78,7 +78,7 @@ export const ServiceMenu = ({
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out"
                 style={{
-                  backgroundImage: `url(${s.images})`,
+                  backgroundImage: `url(${s.images[0]})`,
                   transform: isHovered || isActive ? "scale(1.08)" : "scale(1)",
                   opacity: isActive ? 0.18 : isHovered ? 0.13 : 0.07,
                 }}
