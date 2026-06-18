@@ -54,7 +54,7 @@ export const SectionHeader = () => {
       <div className="svc-header-bg">
         <div className="svc-header-img-wrap">
           <img
-            src="/service/rotary-car-engine-details-combustion.png"
+            src="/service/rotary-car-engine-details-combustion-1.png"
             alt=""
             aria-hidden="true"
             className="svc-header-img"
