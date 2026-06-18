@@ -269,7 +269,10 @@ export const SERVICES: Service[] = [
     icon: TriangleAlert,
     title: "Roadside Assistance",
     images: [
-      "/service/menu/img11.png"
+      "/service/road/img1.jpeg",
+      "/service/road/img4.jpeg",
+      "/service/road/img3.jpeg",
+      "/service/road/img2.jpeg",
     ],
     shortDescription:
       "On-call mechanical assistance for breakdowns, flat tyres, and jump starts.",
