@@ -9,10 +9,12 @@ import {
   Cog,
   PaintBucket,
   LifeBuoy,
+  ArrowRight
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "../ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,16 +109,32 @@ export const Services = () => {
     <section id="services" className="relative py-28 bg-gradient-dark" ref={containerRef}>
       <div className="container mx-auto flex flex-col items-center">
         <div className="max-w-3xl mb-20 text-center">
-          <div className="service-label text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-4">
-            What we do
-          </div>
-          <h2 className="service-heading font-display text-5xl md:text-7xl leading-none mb-6">
-            OFFERED <span className="text-gradient-primary">SERVICES</span>
-          </h2>
-          <p className="service-description text-muted-foreground text-lg">
-            Every job is backed by certified technicians, genuine parts and a 12-month workmanship guarantee.
-          </p>
-        </div>
+  <div className="service-label text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-4">
+    What we do
+  </div>
+
+  <h2 className="service-heading font-display text-5xl md:text-7xl leading-none mb-6">
+    OFFERED <span className="text-gradient-primary">SERVICES</span>
+  </h2>
+
+  <p className="service-description text-muted-foreground text-lg">
+    Every job is backed by certified technicians, genuine parts and a 12-month workmanship guarantee.
+  </p>
+
+  {/* Increased spacing */}
+  <div className="mt-10 md:mt-12">
+    <Button
+      variant="hero"
+      className="h-11 px-6 text-sm md:h-12 md:px-8 md:text-sm"
+      asChild
+    >
+      <a href="/services#service-menu">
+        Book a Service
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </a>
+    </Button>
+  </div>
+</div>
 
         <div
   className="
@@ -216,7 +234,30 @@ p-4 sm:p-6 md:p-7
         <p className="text-[11px] sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
           {s.desc}
         </p>
+         <div className="mt-auto pt-4">
+  <div className="mb-2 h-px bg-gradient-to-r from-red-900/70 via-red-900/30 to-transparent" />
+
+    <a
+      href="/services#service-menu"
+      className="
+        inline-flex items-center gap-1
+        text-[8px] sm:text-[9px] md:text-[10px]
+        uppercase tracking-[0.22em]
+        transition-all duration-300
+        hover:gap-2
+      "
+      style={{
+        background: "linear-gradient(90deg, #7f1d1d 0%, #dc2626 100%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >
+      View More
+      <ArrowRight className="h-3 w-3 text-red-700" />
+    </a>
+  </div>
       </div>
+     
     </div>
   ))}
 </div>

@@ -229,7 +229,7 @@ export const SERVICES: Service[] = [
     icon: PaintBucket,
     title: "Panel Beating & Painting",
     images: [
-      "/service/menu/img11.png"
+      "/service/menu/black.png"
     ],
     shortDescription:
       "Structural panel repairs and factory-matched resprays for all damage types.",
@@ -249,7 +249,7 @@ export const SERVICES: Service[] = [
     icon: Sparkles,
     title: "Detailing",
     images: [
-      "/service/menu/img7.png"
+      "/service/menu/black.png"
     ],
     shortDescription:
       "Paint correction, interior restoration, and protective coating application.",
