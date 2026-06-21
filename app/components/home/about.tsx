@@ -126,7 +126,7 @@ export default function AboutSnippet() {
       {/* Credential tags */}
       <div className="flex flex-wrap gap-2">
         {[
-          { label: "MTA Qualified",     red: true },
+          { label: "25+ years",     red: true },
           { label: "Factory Trained",   red: true },
           { label: "Written Guarantee", red: true },
         ].map((c) => (

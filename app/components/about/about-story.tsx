@@ -34,8 +34,8 @@ const pillars = [
 ];
 
 const trustPoints = [
-  { label: "MTA Qualified",      sub: "Fully certified" },
-  { label: "Factory Trained",    sub: "OEM programmes" },
+  { label: "Qualified",      sub: "25+ years" },
+  { label: "Euro and JDM",    sub: "All makes & models" },
   { label: "12K+ Vehicles",      sub: "Serviced & repaired" },
   { label: "Written Guarantee",  sub: "Every single job" },
 ];
