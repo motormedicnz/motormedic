@@ -238,7 +238,7 @@ p-4 sm:p-6 md:p-7
   <div className="mb-2 h-px bg-gradient-to-r from-red-900/70 via-red-900/30 to-transparent" />
 
     <a
-      href="/services#service-menu"
+      href="/services"
       className="
         inline-flex items-center gap-1
         text-[8px] sm:text-[9px] md:text-[10px]
