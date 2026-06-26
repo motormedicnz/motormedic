@@ -209,7 +209,10 @@ export const SERVICES: Service[] = [
     icon: ScanLine,
     title: "Computer Diagnostics",
     images: [
-      "/service/menu/img8.png"
+      "/service/comp/img1.jpeg",
+      "/service/comp/img2.jpeg",
+      "/service/comp/img3.jpeg",
+      "/service/comp/img4.jpeg",
     ],
     shortDescription:
       "Professional-grade OBD scanning and live data analysis across all systems.",
@@ -229,7 +232,11 @@ export const SERVICES: Service[] = [
     icon: PaintBucket,
     title: "Panel Beating & Painting",
     images: [
-      "/service/menu/black.png"
+      "/service/panel/img1.jpeg",
+      "/service/panel/img2.jpeg",
+      "/service/panel/img3.jpeg",
+      "/service/panel/img4.jpeg",
+
     ],
     shortDescription:
       "Structural panel repairs and factory-matched resprays for all damage types.",
