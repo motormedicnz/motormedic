@@ -305,7 +305,7 @@ export const SERVICES: Service[] = [
     icon: Wrench,
     title: "Other Service",
     images: [
-      "/service/menu/img12.png"
+      "/service/menu/black.png"
     ],
     shortDescription: "Can't find your service? Tell us what you need.",
     description:

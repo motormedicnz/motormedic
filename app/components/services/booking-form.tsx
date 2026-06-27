@@ -121,9 +121,9 @@ export const BookingForm = ({
 
                 {/* Dropdown */}
                 {open && (
-  <div
-    onClick={(e) => e.stopPropagation()}
-    className="
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        className="
       absolute z-50 mt-2
       left-0
       w-full
@@ -135,7 +135,7 @@ export const BookingForm = ({
       p-4
       shadow-xl
     "
-  >
+                    >
                         {/* Month navigation */}
                         <div className="flex items-center justify-between px-1 mb-3">
                             <button
@@ -280,11 +280,10 @@ export const BookingForm = ({
                                         onChange(s);
                                         setOpen(false);
                                     }}
-                                    className={`w-full rounded-lg px-3 py-2 text-left text-sm transition ${
-                                        s === value
+                                    className={`w-full rounded-lg px-3 py-2 text-left text-sm transition ${s === value
                                             ? "bg-red-600 text-white"
                                             : "text-white/90 hover:bg-white/[0.06]"
-                                    }`}
+                                        }`}
                                 >
                                     {s}
                                 </button>
@@ -475,8 +474,8 @@ export const BookingForm = ({
                                     {otpLoading
                                         ? "Sending..."
                                         : otpSent
-                                        ? "Resend OTP"
-                                        : "Verify Email"}
+                                            ? "Resend OTP"
+                                            : "Verify Email"}
                                 </button>
                             )}
 
@@ -492,7 +491,7 @@ export const BookingForm = ({
                                     <button
                                         type="button"
                                         onClick={verifyOtp}
-                                        className="rounded-xl bg-red-600 px-5 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-red-500"
+                                        className="animate-pulse rounded-xl border-2 border-white bg-red-600 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-red-500"
                                     >
                                         Verify
                                     </button>
@@ -603,8 +602,8 @@ export const BookingForm = ({
                 {loading
                     ? "Sending..."
                     : !verified
-                    ? "Verify Email First"
-                    : `Book ${service.title}`}
+                        ? "Verify Email First"
+                        : `Book ${service.title}`}
             </button>
 
         </form>
