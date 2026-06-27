@@ -112,7 +112,13 @@ export const SERVICES: Service[] = [
     icon: Droplets,
     title: "Oil Change & Services",
     images: [
-      "service/menu/img4.png"
+      "/service/oil/img1.jpeg",
+      "/service/oil/img2.jpeg",
+      "/service/oil/img3.jpeg",
+      "/service/oil/img4.jpeg",
+      "/service/oil/img5.jpeg",
+      "/service/oil/img6.jpeg",
+    
     ],
     shortDescription:
       "Correct-grade oil, quality filters, and a full fluid check every visit.",
