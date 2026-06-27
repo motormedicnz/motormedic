@@ -281,8 +281,8 @@ export const BookingForm = ({
                                         setOpen(false);
                                     }}
                                     className={`w-full rounded-lg px-3 py-2 text-left text-sm transition ${s === value
-                                            ? "bg-red-600 text-white"
-                                            : "text-white/90 hover:bg-white/[0.06]"
+                                        ? "bg-red-600 text-white"
+                                        : "text-white/90 hover:bg-white/[0.06]"
                                         }`}
                                 >
                                     {s}
@@ -469,7 +469,7 @@ export const BookingForm = ({
                                     type="button"
                                     onClick={sendOtp}
                                     disabled={otpLoading}
-                                    className="h-11 rounded-xl border border-white/10 bg-white/[0.03] px-5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:border-red-500"
+                                    className="h-11 animate-pulse rounded-xl border-2 border-white bg-red-600 px-5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-red-500 disabled:opacity-60"
                                 >
                                     {otpLoading
                                         ? "Sending..."
